@@ -1,0 +1,73 @@
+{% extends 'donor/base.html' %}
+
+
+
+{% block content %}
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Life Saver - Donate Blood Today</title>
+   
+  
+  
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <h1 style="color: black; ">Be a Hero. Donate Blood.</h1>
+      <p style="color: black;">Every blood donation has the potential to save three lives. Help us ensure a critical supply for those in need.</p>
+      <a href="{% url 'donor_register' %}" class="btn btn-primary">Register as a Donor</a>
+    </div>
+  </section>
+
+  <section class="why-donate">
+    <h2>Why Donate Blood?</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="static/images/impact.png" alt="Impact of Blood Donation">
+        <h3 style="color: black;">Make a Significant Impact</h3>
+        <p>Blood cannot be manufactured, and the need for transfusions is constant. Your donation can help patients with accidents, surgeries, and medical conditions.</p>
+      </div>
+      <div class="card">
+        <img src="static/images/universal.png" alt="Universal Need for Blood">
+        <h3 style="color: black;">The Need is Universal</h3>
+        <p>Blood transfusions are required by people of all ages and backgrounds. You never know when you or someone you love might need them.</p>
+      </div>
+      <div class="card">
+        <img src="static/images/simple.png" alt="Simple Donation Process">
+        <h3 style="color: black;">Simple and Rewarding Process</h3>
+        <p>Donating blood is a safe and relatively quick process. It's a small act of kindness that can make a world of difference.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="eligibility">
+    <h2>Am I Eligible to Donate?</h2>
+    <p style="color: white;">Most healthy individuals between the ages of 18-70 (or depending on local regulations) can donate blood. Here are some basic eligibility requirements:</p>
+    <ul style="color: white;">
+      <li>Meet the weight and height requirements.</li>
+      <li>Be in good general health.</li>
+      <li>Have not donated blood recently (check eligibility period).</li>
+      <li>Not have certain medical conditions or medications.</li>
+    </ul>
+    <a href="#eligibility-details" class="btn btn-secondary">See Full Eligibility Criteria</a>
+  </section>
+
+  <section class="how-to-donate" id="register">
+    <h2>How to Donate Blood?</h2>
+    <ol style="color: white;">
+      <li>Register as a donor using our quick and easy online form.</li>    
+      <li>Arrive at your appointment well-hydrated and having eaten a healthy meal beforehand.</li>
+      <li>The donation process typically takes about an hour, including registration, screening, and the actual donation.</li>
+      <li>After donating, relax and enjoy refreshments while your body replenishes the blood.</li>
+    </ol>
+    <a href="{% url 'donor_register' %}" class="btn btn-primary">Register Now!</a>
+  </section>
+
+</body>
+</html>
+{% endblock %}

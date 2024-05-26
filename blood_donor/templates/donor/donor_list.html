@@ -1,0 +1,55 @@
+{% extends 'donor/base.html' %}
+
+{% block content %}
+  <h2 style="background-color: rgba(255, 255, 255, 0.551);">DONOR LIST</h2>
+  <form method="get" action="{% url 'donor_list' %}">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="blood_group">Blood Group:</label>
+        <input type="text" class="form-control" id="blood_group" name="blood_group">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  {% if donors %}
+    <table class="table table-striped mt-4">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Weight</th>
+          <th>Email</th>
+          <th>Blood Group</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for donor in donors %}
+          <tr>
+            <td>{{ donor.name }}</td>
+            <td>{{ donor.age }}</td>
+            <td>{{ donor.weight }}</td>
+            <td>{{ donor.email }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.phone_number }}</td>
+            <td>{{ donor.address }}</td>
+            <td>{{ donor.city }}</td>
+            <td>{{ donor.state }}</td>
+            <td>{{ donor.zip_code }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No donors found.</p>
+  {% endif %}
+{% endblock %}

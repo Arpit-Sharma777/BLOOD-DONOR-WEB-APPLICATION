@@ -1,0 +1,31 @@
+{% extends 'donor/base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 style="background-color: rgba(255, 255, 255, 0.438);">REGISTER AS A DONOR</h2>
+      {% if age_info %}
+        <div class="alert alert-warning" role="alert">
+          {{ age_info }}
+        </div>
+      {% elif weight_info %}
+        <div class="alert alert-warning" role="alert">
+          {{ weight_info }}
+        </div>
+      {% endif %}
+      <form method="post" class="container">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+            {% for error in field.errors %}
+              <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-reg">Register</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
