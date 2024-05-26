@@ -52,3 +52,6 @@ def donor_list(request):
     if location:
         donors = donors.filter(city__icontains=location)
     return render(request, 'donor/donor_list.html', {'donors': donors})
+
+def blood_request_success(request):
+    return render(request, 'donor/info_success.html')
